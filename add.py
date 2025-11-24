@@ -1,10 +1,13 @@
+import sys
+
 def add(a, b):
     return a + b
 
 if __name__ == "__main__":
-   
-    x = input("Enter first number: ")
-    y = input("Enter second number: ")
-
-   
-    print("sum:", add(int(x), int(y)))
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <num1> <num2>")
+        sys.exit(1)
+    
+    x = int(sys.argv[1])
+    y = int(sys.argv[2])
+    print("Sum:", add(x, y))
