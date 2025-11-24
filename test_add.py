@@ -1,14 +1,12 @@
-from add import sys
-
 def add(a, b):
     return a + b
 
-if _name_ == "_main_":
-    if len(sys.argv) == 3:  
-        x = int(sys.argv[1])
-        y = int(sys.argv[2])
-    else:  
-        x = 10
-        y = 20
-
-    print("sum", add(x, y))
+# Tests
+def test_add_positive_numbers():
+    assert add(int("2"), int("3")) == 5
+    
+def test_add_negative_numbers():
+    assert add(int("-4"), int("-6")) == -10
+    
+def test_add_zero():
+    assert add(int("0"), int("5")) == 5
